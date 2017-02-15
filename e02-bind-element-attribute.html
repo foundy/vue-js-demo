@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>example</title>
+  </head>
+  <body>
+    <div id="app-2">
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound title!
+      </span>
+    </div>
+    <button type="button" name="button" onclick="javascript:updateMessage();">update message</button>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script>
+    var app2 = new Vue({
+      el: '#app-2',
+      data: {
+        message: 'You loaded this page on ' + new Date()
+      }
+    });
+
+    var updateMessage = function () {
+      app2.message = 'updated message on ' + new Date();
+    };
+    </script>
+  </body>
+</html>
